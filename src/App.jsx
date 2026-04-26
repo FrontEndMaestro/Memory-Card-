@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Header from "./components/Header";
 
 //let dataArray = [];
 function App() {
@@ -34,6 +35,10 @@ function App() {
       ignore = true;
     };
   }, []);
-  return <></>;
+  return (
+    <>
+      <Header></Header>
+    </>
+  );
 }
 export default App;
