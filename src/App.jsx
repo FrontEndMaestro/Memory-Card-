@@ -7,6 +7,7 @@ function App() {
 
   useEffect(() => {
     const url = "https://pokeapi.co/api/v2/pokemon/";
+    let ignore = false;
     const promises = [];
     let dataArray = [];
     for (let i = 1; i < 14; i++) {
@@ -14,6 +15,9 @@ function App() {
     }
     Promise.all(promises)
       .then((responses) => {
+        if (ignore) {
+          return;
+        }
         responses.forEach((result) =>
           dataArray.push({
             name: result.name,
@@ -27,7 +31,7 @@ function App() {
       });
 
     return () => {
-      setPokemonData([]);
+      ignore = true;
     };
   }, []);
   return <></>;
