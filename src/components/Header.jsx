@@ -1,5 +1,5 @@
 import "../styles/header.css";
-export default function Header() {
+export default function Header({ score, bestScore }) {
   return (
     <header className="header-container">
       <div className="about-game">
@@ -10,8 +10,8 @@ export default function Header() {
         </h2>
       </div>
       <div className="scoreboard">
-        <h2 className="current-score">Score:</h2>
-        <h2 className="best-score">Best Score:</h2>
+        <h2 className="current-score">Score:{score}</h2>
+        <h2 className="best-score">Best Score:{bestScore}</h2>
       </div>
     </header>
   );
