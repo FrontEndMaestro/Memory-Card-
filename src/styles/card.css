@@ -5,7 +5,7 @@
   align-items: center;
   padding: 20px;
   border-radius: 20px;
-  transition: box-shadow 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .card img {
@@ -16,4 +16,5 @@
   box-shadow:
     0px 5px 25px 20px rgba(45, 152, 160, 0.25),
     0 10px 10px rgba(45, 152, 160, 0.25);
+  scale: 1.1;
 }
