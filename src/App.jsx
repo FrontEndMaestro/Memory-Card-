@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Cards from "./components/CardsSection";
+import CardsSection from "./components/CardsSection";
 
 //let dataArray = [];
 function App() {
@@ -77,7 +77,10 @@ function App() {
   return (
     <>
       <Header score={score} bestScore={bestScore}></Header>
-      <Cards pokemonDataArray={pokemonData} cardClick={cardClicked}></Cards>
+      <CardsSection
+        pokemonDataArray={pokemonData}
+        cardClick={cardClicked}
+      ></CardsSection>
     </>
   );
 }
