@@ -9,6 +9,16 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
+  function shuffleCards(array) {
+    let arr = [...array];
+    for (let i = 0; i < arr.length; i++) {
+      let j = Math.floor(Math.random() * (arr.length - i)) + i;
+      var temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+    setPokemonData(arr);
+  }
 
   function cardClicked(id, click) {
     let index = pokemonData.findIndex((element) => element.id == id);
@@ -29,6 +39,7 @@ function App() {
       let newScore = score + 1;
       setScore(newScore);
     }
+    shuffleCards(array);
   }
 
   useEffect(() => {
@@ -53,6 +64,7 @@ function App() {
           }),
         );
         setPokemonData(dataArray);
+        shuffleCards(dataArray);
       })
       .catch((error) => {
         console.log(error);
